@@ -68,6 +68,7 @@ input[type="text"]{
 
 button {
     background-color: #f2f2f2;
+    color: black;
     padding: 10px 20px;
     border-radius: 4px;
     font-size: 14px;
