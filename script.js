@@ -1,6 +1,11 @@
 //create click event for buttons
-document.getElementById("search").addEventListener("click", getBook)
-document.getElementById("feelingLucky").addEventListener("click", getRandomWord)
+document.getElementById("search").addEventListener("click", getBook);
+document.querySelector("input").addEventListener("keypress", function(event) {
+    if(event.key === "Enter") {
+        getBook()
+    }
+});
+document.getElementById("feelingLucky").addEventListener("click", getRandomWord);
 
 //get book api
 function getBook(){
