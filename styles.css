@@ -1,0 +1,159 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+#header {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+h1 {
+    font-family: sans-serif;
+    font-size: 8em;
+    text-align: center;
+    margin-bottom: 0.2em;
+    display: flex;
+    align-items: center
+
+    
+}
+
+#firstLetter {
+    color: #4885ed;
+}
+
+#secondLetter {
+    color: #db3236
+}
+
+#thirdLetter {
+    color: #f4c20d
+}
+
+#fourthLetter {
+    color: #4885ed;
+}
+
+#fifthLetter {
+    color: #3cba54;
+}
+
+#sixthLetter {
+    color: #db3236
+}
+
+
+input[type="text"]{
+    width: 50vw;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 32px;
+    font-size: 16px;
+    margin: 10px 0;
+    box-shadow: 0 0 10px #ccc;
+}
+
+#buttons {
+    display: flex;
+    align-items: center;
+    
+}
+
+button {
+    background-color: #f2f2f2;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 14px;
+    border: none; 
+    cursor: pointer;
+    margin: 5px;
+}
+
+
+#feelingLucky {
+    margin-left: 10px;
+}
+
+#mainDiv {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+
+
+.card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    width: calc(33.3% - 20px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 2px solid #ccc;
+    padding: 20px;
+    margin: 10px;
+    align-items: center;
+    text-align: center;
+}
+
+.card img {
+    max-width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.card h2 {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+.card h3, .card h4 {
+    font-size: 1em;
+    margin: 5px 0;
+    word-break: break-word;
+}
+
+
+
+
+/* media queries */
+
+@media (max-width: 767px) {
+    h1 {
+        font-size: 4em;
+    }
+
+    #mainDiv .card {
+        width: calc(50% - 20px);
+    }
+}
+
+
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 3em;
+    }
+
+    #mainDiv .card {
+        width: calc(100% - 20px);
+    }
+        
+    #buttons {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    
+        button {
+            margin-bottom: 10px;
+        }
+    }
+
