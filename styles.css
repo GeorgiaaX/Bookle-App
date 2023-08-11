@@ -158,5 +158,14 @@ button {
             margin-bottom: 10px;
             padding: 5px 10px;
         }
+        
+        input[type="text"]{
+        width: 50vw;
+        padding: 10px 20px;
+        font-size: 16px;
+        margin: 10px 0;
+
+    }
     }
 
+    
