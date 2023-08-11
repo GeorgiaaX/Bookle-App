@@ -9,6 +9,7 @@ document.getElementById("feelingLucky").addEventListener("click", getRandomWord)
 
 //get book api
 function getBook(){
+  
 
     document.getElementById("mainDiv").innerHTML = ""; // Clear previous content
 
@@ -18,6 +19,7 @@ function getBook(){
     fetch(url)
     .then(res => res.json())
     .then(data => {
+        console.log(data)
         for(i = 0; i < data.docs.length; i++){
             if(data.docs[i].has_fulltext && data.docs[i].title && data.docs[i].author_name && data.docs[i].oclc){
                 const cardDiv = document.createElement("div");
@@ -38,6 +40,8 @@ function getBook(){
                 if (getBookDescription) {
                     getDescription(getBookDescription, cardDiv);
                 }
+
+
 
                 const rating = document.createElement("h4");
                 rating.textContent = data.docs[i].ratings_average ? "Rating: " + data.docs[i].ratings_average : "";
@@ -73,7 +77,7 @@ function getRandomBook(data) {
     .then(res => res.json())
     .then(data => {
         console.log(data)
-        if(data.docs[0].cover_edition_key){
+        if(data.docs[0].cover_edition_key && data.docs[0].has_fulltext && data.docs[0].title && data.docs[0].author_name){
             const cardDiv = document.createElement("div")
                 cardDiv.classList.add("card")
                 let coverImageKey = data.docs[0].cover_edition_key
@@ -89,11 +93,11 @@ function getRandomBook(data) {
                     rating.textContent = "Rating: " + data.docs[0].ratings_average
                 }
 
-
                 const getBookDescription = data.docs[0].oclc[0];
                 if (getBookDescription) {
                     getDescription(getBookDescription, cardDiv);
                 }
+
 
                 cardDiv.appendChild(title)
                 cardDiv.appendChild(author)
@@ -106,6 +110,7 @@ function getRandomBook(data) {
     })
     .catch(err => {
         console.log(err)
+        getRandomWord()
     })
 }
 
